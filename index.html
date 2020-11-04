@@ -12,13 +12,21 @@
   <title>Notas.web</title>
 </head>
 
-<body>
+<body id="body">
   <div>
     <form class="estilo" id="formUser">
       <div>
-        <h1 class="hhh">Blog de notas</h1>
+        <div class="helloIcon">
+          <h1 class="hhh">Blog de notas</h1>
+          <!-- <button onclick="Iconn()"> -->
+            <svg width="2em" height="2em" onclick="Iconn()" id="icono" viewBox="0 0 16 16" class="bi bi-circle-half" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 15V1a7 7 0 1 1 0 14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+          </svg>
+        <!-- </button> -->
+        </div>
         <br>
-        
+
         <label>Nombre de tarea</label>
         <div class="input-group">
           <input type="text" id="uno" class="form-control" aria-label="Text input with checkbox" placeholder="Titulo">

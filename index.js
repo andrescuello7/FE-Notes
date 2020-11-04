@@ -6,7 +6,12 @@ const inputUl = document.getElementById('ul');
 const button = document.getElementById('button');
 const boton = document.getElementById('boton');
 const usersTable = document.getElementById('usersTable');
+const icon= document.getElementById('body');
 const users = [];
+
+function Iconn() {
+    icon.style.background= 'white';
+}
 
 const generateId = function () {
     return '_' + Math.random().toString(36).substr(2, 9);
