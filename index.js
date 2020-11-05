@@ -67,7 +67,7 @@ function displayUser() {
         <form >
             <div class="formularioDeOrigen"> 
             <p class="hl"><b>${user.division}</b></p>
-            <h5 class="h5">${user.Uno  || ''}</h5>
+            <h5 class="tituloo">${user.Uno  || ''}</h5>
             <br>
             <div class="origen">
               <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal${user.id}">Mostrar</button>
