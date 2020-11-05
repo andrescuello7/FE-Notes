@@ -7,10 +7,18 @@ const button = document.getElementById('button');
 const boton = document.getElementById('boton');
 const usersTable = document.getElementById('usersTable');
 const icon= document.getElementById('body');
+const icono= document.getElementById('icono');
 const users = [];
 
-function Iconn() {
-    icon.style.background= 'white';
+
+function color(){
+    console.log('me diste un clik')
+    let bg= icon.style.background;
+    if(bg == "black") {
+        icon.style.background="white";
+    } else{
+        icon.style.background="black";
+    }
 }
 
 const generateId = function () {
