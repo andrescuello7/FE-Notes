@@ -8,7 +8,10 @@ const boton = document.getElementById('boton');
 const usersTable = document.getElementById('usersTable');
 const icon= document.getElementById('body');
 const icono= document.getElementById('icono');
+const crearElement= document.getElementById('crear');
 const users = [];
+
+
 
 
 function color(){
@@ -49,18 +52,22 @@ button.onclick = (e) => {
     formUser.reset();
     displayUser();
 }
-
+function papi(){
+    // formUser.style.color= 'green';
+    // crearElement.style.background ='none';
+    // const osa=`<p>Hola como estas</p>`
+}
 function displayUser() {
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const rows = [];
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
-        // const createdAt = new Date(user.createdAt)
+        const createdAt = new Date(user.createdAt)
         const tr = `
         <form >
             <div class="formularioDeOrigen"> 
             <p class="hl"><b>${user.division}</b></p>
-            <h3>${user.Uno  || ''}</h3>
+            <h5>${user.Uno  || ''}</h5>
             <br>
             <div class="origen">
               <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal${user.id}">Mostrar</button>
@@ -73,16 +80,17 @@ function displayUser() {
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">${user.Uno}</h5>
+                                <h4 class="modal-title" id="exampleModalLabel">${user.Uno}</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <p>Nota: ${user.Dos}</p>
+                                <p> ${user.Dos}</p>
                             </div>
-                            <div class="modal-footer">
+                            <div id="datee" class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <p class="data">Fecha: ${createdAt.toLocaleString()}</p>
                             </div>
                         </div>
                     </div>
@@ -102,11 +110,3 @@ function deleteUser(userId) {
     displayUser();
 }
 
-
-// boton.onclick = () =>{
-    //     const tr=`<h1>Hola como estas</h1>`
-    //     const userJ= JSON.parse(userJson);
-    //     localStorage.getItem(tr); 
-    //     console.log(userJ)
-
-    // }
