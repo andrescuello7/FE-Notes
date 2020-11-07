@@ -60,6 +60,9 @@ h5{
     font-size: 20px;
 }
 
+#justifi{
+    display: flex;
+}
 
 @media screen and (max-width: 750px) {
     .formularioDeOrigen{
