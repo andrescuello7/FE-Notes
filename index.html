@@ -26,22 +26,18 @@
           </a>
         </div>
         <br>
-
-
-
         <div>
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal">
             Crear Nota
           </button>
-
           <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Empieza a crear tu nota</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Crear Nota</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -55,13 +51,11 @@
                       placeholder="Titulo">
                   </div>
                   <br>
-
                   <label>Tarea</label>
                   <div class="input-group">
                     <textarea class="form-control" id="dos" rows="3" maxlength="500"
                       placeholder="Ingrese Tarea"></textarea>
                   </div>
-
                   <div>
                     <div class="form-group">
                       <label for="division"></label>
@@ -75,80 +69,26 @@
                       </select>
                     </div>
                   </div>
-
                 </div>
                 <div class="modal-footer">
-                  <button type="submit" id="button" class="btn btn-outline-info m-1" class="btn btn-primary">Crear
-                    nota</button>
+                  <button type="submit" id="button" class="btn btn-outline-info m-1" class="btn btn-primary">
+                    Crear nota
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Codigo de Crear nota con texto incluido -->
-
-        <!-- <div id="Todo">
-
-          <label>Nombre de tarea</label>
-          <div class="input-group">
-            <input type="text" id="uno" class="form-control" aria-label="Text input with checkbox" placeholder="Titulo">
-          </div>
-
-          <br>
-
-          <label>Tarea</label>
-          <div class="input-group">
-            <textarea class="form-control" id="dos" rows="3" maxlength="500" placeholder="Ingrese Tarea"></textarea>
-          </div>
-
-          <div>
-            <div class="form-group">
-              <label for="division"></label>
-              <select class="form-control" id="division" required>
-                <option value="" disabled selected>Que tipo de nota es?</option>
-                <option>Compras</option>
-                <option>Personales</option>
-                <option>Familiares</option>
-                <option>Organizacion</option>
-                <option>Guardar Datos</option>
-              </select>
-            </div>
-          </div>
-
-
-          <div id="mostrar">
-          </div>
-
-          <div id="justifi">
-            Boton de crear nota -->
-
-            <!-- <div class="inputs">
-              <div>
-                <button id="button" type="submit" class="btn btn-outline-light m-1">Subir Nota</button>
-              </div>
-            </div>
-          </div>
-
-
-        </div> -->
-
         <br>
-
         <div id="noSeparar">
-
           <div class="ul">
             <ul id="ul">
             </ul>
           </div>
-
         </div>
       </div>
     </form>
   </div>
-
-
-
   <div class="container">
     <table class="table table-striped">
       <thead>
@@ -157,48 +97,49 @@
       </tbody>
     </table>
   </div>
-
+  <!-- Button trigger modal -->
   <!-- Modal -->
-  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModallLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Editar usuario</h5>
+          <h5 class="modal-title" id="exampleModallLabel">Modal title</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form class="m-3" id="formEdit">
+        <form id="formEdit">
           <div class="modal-body">
-            <div class="form-group">
-              <label for="email"> Correo </label>
-              <input type="email" id="emailModal" class="form-control" required>
+            <div class="modal-body">
+              <label>Tarea</label>
+              <div class="input-group">
+                <textarea class="form-control" id="textEdit" rows="3" maxlength="500"
+                  placeholder="Ingrese Tarea"></textarea>
+              </div>
+              <div>
+                <div class="form-group">
+                  <label for="division"></label>
+                  <select class="form-control" id="divisionEdit" required>
+                    <option value="" disabled selected>Que tipo de nota es?</option>
+                    <option>Compras</option>
+                    <option>Personales</option>
+                    <option>Familiares</option>
+                    <option>Organizacion</option>
+                    <option>Guardar Datos</option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="birthDate"> Fecha de nacimiento </label>
-              <input type="date" id="birthDateModal" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="division">División</label>
-              <select class="form-control" id="divisionModal" required>
-                <option value="" disabled selected>Elija su seniority</option>
-                <option>Trainee</option>
-                <option>Junior</option>
-                <option>Junior Advanced</option>
-                <option>Semi Senior</option>
-                <option>Senior</option>
-              </select>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-outline-success"> Actualizar </button>
-            <button type="button" class="btn btn-outline-success" data-dismiss="modal">Cerrar</button>
-          </div>
+            <div class="modal-footer">
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary"> Actualizar </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              </div>
         </form>
       </div>
     </div>
   </div>
-
+  </div>
   <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
   <script src="index.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
