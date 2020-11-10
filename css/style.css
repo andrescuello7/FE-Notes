@@ -14,15 +14,22 @@ body{
 #icono{
     margin: 4%;
 }
+.dote{
+    text-align: right;
+}
 .Datee{
     display: flex;
     justify-content: space-between;
 }
+.datee{
+    margin: 1%;
+}
 .data{
+    margin: 0%;
     color: white;
-    background-color: rgb(24, 23, 23);
+    background-color: #6c757d;
     padding: 6px;
-    border-radius: 4px;
+    font-family: auto;
 }
 
 .hhh{
