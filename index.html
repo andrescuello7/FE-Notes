@@ -14,81 +14,96 @@
 
 <body id="body">
   <div>
-    <form class="estilo" id="formUser">
-      <div>
-        <div class="helloIcon">
-          <h1 class="hhh">Blog de notas</h1>
-          <a id="icono" onclick="color()">
-            <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-circle-half" fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M8 15V1a7 7 0 1 1 0 14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
-            </svg>
-          </a>
-        </div>
-        <br>
+    <div class="FormuEdit">
+      <form class="estilo" id="formUser">
         <div>
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal">
-            Crear Nota
-          </button>
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Crear Nota</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <label for="tittle">
-                    <b>Titulo</b>
-                  </label>
-                  <div class="input-group">
-                    <input type="text" id="uno" class="form-control" aria-label="Text input with checkbox"
-                      placeholder="Titulo">
-                  </div>
-                  <br>
-                  <label>Tarea</label>
-                  <div class="input-group">
-                    <textarea class="form-control" id="dos" rows="3" maxlength="500"
-                      placeholder="Ingrese Tarea"></textarea>
-                  </div>
-                  <div>
-                    <div class="form-group">
-                      <label for="division"></label>
-                      <select class="form-control" id="division" required>
-                        <option value="" disabled selected>Que tipo de nota es?</option>
-                        <option>Compras</option>
-                        <option>Personales</option>
-                        <option>Familiares</option>
-                        <option>Organizacion</option>
-                        <option>Guardar Datos</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" id="button" class="btn btn-outline-info m-1" class="btn btn-primary">
-                    Crear nota
-                  </button>
+          <div class="helloIcon">
+            <h1 class="hhh">Blog de notas</h1>
+            <a id="icono" onclick="color()">
+              <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-circle-half" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 15V1a7 7 0 1 1 0 14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+              </svg>
+            </a>
+          </div>
+      </form>
+      <form id="searchForm">
+        <div class="searchFormEdit">
+          <div class="jola input-group">
+            <input type="search" id="search" class="form-control" aria-label="Text input with checkbox"
+              placeholder="Búsqueda">
+          </div>
+          <div class="crearCard">
+            <button type="button" class="btn btn-outline-light ml-3" data-toggle="modal" data-target="#exampleModal">
+              Crear Nota
+            </button>
+            <button type="submit" class="btn btn-outline-info">
+              Buscar Nota
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="botonesBajos modal-header">
+              <h5 class=" modal-title" id="exampleModalLabel"><b>Crear Nota</b></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="primerModal modal-body">
+              <label for="tittle">
+                <b>Titulo</b>
+              </label>
+              <div class="input-group">
+                <input type="text" id="uno" class="form-control" aria-label="Text input with checkbox"
+                  placeholder="Titulo">
+              </div>
+              <br>
+              <label><b>Tarea</b></label>
+              <div class="input-group">
+                <textarea class="form-control" id="dos" rows="3" maxlength="500" placeholder="Ingrese Tarea"></textarea>
+              </div>
+              <div>
+                <div class="form-group">
+                  <label for="division"></label>
+                  <select class="form-control" id="division" required>
+                    <option value="" disabled selected>Que tipo de nota es?</option>
+                    <option>Compras</option>
+                    <option>Personales</option>
+                    <option>Familiares</option>
+                    <option>Organizacion</option>
+                    <option>Guardar Datos</option>
+                  </select>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <br>
-        <div id="noSeparar">
-          <div class="ul">
-            <ul id="ul">
-            </ul>
+            <div class="botonesBajos modal-footer">
+              <button type="submit" id="button" class="btn btn-info">
+                Crear nota
+              </button>
+              <button type="button" class="btn btn-dark" data-dismiss="modal">
+                Cerrar
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </form>
+    </div>
+    <br>
+    <div id="noSeparar">
+      <div class="ul">
+        <ul id="ul">
+        </ul>
+      </div>
+    </div>
   </div>
+
   <div class="container">
     <table class="table table-striped">
       <thead>
@@ -97,21 +112,30 @@
       </tbody>
     </table>
   </div>
+  <!-- <section>
+      <div>
+        <footer id="editNote" class="editNote">
+          <p>Copyright © App Bloc Notas 2020</p>
+        </footer>
+      </div>
+    </section> 
+   </div> -->
+
   <!-- Button trigger modal -->
   <!-- Modal -->
   <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModallLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModallLabel">Modal title</h5>
+      <div class="hds modal-content">
+        <div class="Superior modal-header">
+          <h5 class="modal-title" id="exampleModallLabel">Modificar Nota</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <form id="formEdit">
           <div class="modal-body">
-            <div class="modal-body">
-              <label>Tarea</label>
+            <div class="ModalUltimo modal-body">
+              <label style="color: rgb(255, 255, 255);"><b>Tarea</b></label>
               <div class="input-group">
                 <textarea class="form-control" id="textEdit" rows="3" maxlength="500"
                   placeholder="Ingrese Tarea"></textarea>
@@ -130,16 +154,18 @@
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-primary"> Actualizar </button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              </div>
+            <div class="Superior modal-footer">
+              <button type="submit" class="btn btn-info"> Actualizar </button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
   </div>
-  </div>
+
+
+
   <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
   <script src="index.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

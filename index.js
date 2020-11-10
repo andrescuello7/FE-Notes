@@ -3,6 +3,7 @@ const inputUno = document.getElementById('uno');
 const inputDos = document.getElementById('dos');
 const divisionInput = document.getElementById('division');
 const inputUl = document.getElementById('ul');
+let editNote= document.getElementById('editNote');
 const button = document.getElementById('button');
 const boton = document.getElementById('boton');
 const usersTable = document.getElementById('usersTable');
@@ -20,14 +21,21 @@ const textEdit= document.getElementById('textEdit');
 const formEdit= document.getElementById('formEdit');
 let editUserId = '';
 
+//Search
+const searchForm= document.getElementById('searchForm');
+// console.log('funciona facha', searchForm)
+const search= document.getElementById('search');
+// console.log('en funcionamiento', search)
+
+
 
 function color(){
     console.log('me diste un clik')
     let bg= icon.style.background;
-    if(bg == "black") {
-        icon.style.background="white";
-    } else{
+    if(bg == "white") {
         icon.style.background="black";
+    } else{
+        icon.style.background="white";
     }
 }
 
@@ -58,7 +66,7 @@ button.onclick = (e) => {
 
     console.log("Funciona", users);
     formUser.reset();
-    displayUser();
+    displayAUser();
 }
 
 const loadForm = (userId) =>{
@@ -69,8 +77,9 @@ const loadForm = (userId) =>{
     editUserId = userId;
 }
 
-function displayUser() {
-    const users = JSON.parse(localStorage.getItem('users')) || [];
+function displayUser(users) {
+    console.log(users)
+    // const users = JSON.parse(localStorage.getItem('users')) || [];
     const rows = [];
     for (let i = 0; i < users.length; i++) {
         const user = users[i];
@@ -85,11 +94,11 @@ function displayUser() {
                 <h5 class="tituloo">${user.Uno  || ''}</h5>
                 <br>
                 <div class="origen">
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal${user.id}"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-right-text-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal${user.id}">Ver <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-right-text-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                    <path fill-rule="evenodd" d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM3.5 3a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/></svg>
                 </button>
                 
-                <button onclick="deleteUser('${user.id}')" class="btn btn-danger"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <button onclick="deleteUser('${user.id}')" class="btn btn-danger">Eliminar <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                    <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
                   </svg>
                 </button>
@@ -99,8 +108,8 @@ function displayUser() {
             <!-- Modal -->
                 <div class="modal fade" id="modal${user.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
+                        <div class="VerModalUno modal-content">
+                            <div class="modalDosBotones modal-header">
                                 <div >
                                     <h4 class="modal-title" id="exampleModalLabel">${user.Uno}</h4>
                                 </div>
@@ -108,16 +117,17 @@ function displayUser() {
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="dote">
-                                <p class="data">Fecha: ${createdAt.toLocaleString()}</p>
+                            <div class="FechaUser">
+                                <p>Fecha: ${createdAt.toLocaleString()}</p>
                             </div>
-                            <div class="modal-body">
+                            <div class="VerModalUno modal-body">
                                 <p>${user.Dos}</p>
                             </div>
                             
-                            <div class="modal-header">
-                                <button type="button" onclick="loadForm('${user.id}')" class="btn btn-primary" data-toggle="modal" data-target="#exampleModall">
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-checklist" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <div class="modalDosBotones modal-header">
+                                <button type="button" onclick="loadForm('${user.id}')" class="btn btn-info" data-toggle="modal" data-target="#exampleModall">
+                                Modificar     
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-checklist" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
                                         <path fill-rule="evenodd" d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
                                     </svg>
@@ -132,18 +142,25 @@ function displayUser() {
     }
     usersTable.innerHTML = rows.join('')
 }
-displayUser();
+//Agrego
+const allconst = JSON.parse(localStorage.getItem('users') || [])
+displayAUser();
+
+function displayAUser(){
+    const users= JSON.parse(localStorage.getItem('users') || [])
+    console.log('lo que tira el cambio', users)
+    displayUser(users);
+}
 
 function deleteUser(userId) {
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const filteredUsers = users.filter((user) => user.id !== userId);
     const usersJson = JSON.stringify(filteredUsers);
     localStorage.setItem('users', usersJson);
-    displayUser();
+    displayAUser();
 }
 
-formEdit.onsubmit = (e) => {
-    // e.preventDefault();
+formEdit.onsubmit = () => {
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const Dos = textEdit.value;
     const division = divisionEdit.value;
@@ -162,6 +179,21 @@ formEdit.onsubmit = (e) => {
     const usersJson = JSON.stringify(updatedUsers);
     localStorage.setItem('users', usersJson);
     formEdit.reset();
-    displayUser();
+    displayAUser();
     $('#exampleModall').modal('hide');
+}
+
+searchForm.onsubmit = (e) =>{
+    e.preventDefault();
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    console.log("users1", users)
+    const term= search.value;
+    console.log('maber', term)
+    const filteredUser= users.filter( u => (
+        u.Uno.toLowerCase().includes(term.toLowerCase())
+         || u.Dos.toLowerCase().includes(term.toLowerCase())
+    ))
+    displayUser(filteredUser);
+    // console.log('lo que sale', filteredUsers);
+    // console.log('funcion final esperemos que funcione', filteredUsers);
 }

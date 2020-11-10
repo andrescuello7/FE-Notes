@@ -1,21 +1,70 @@
 body{
-    background: url(https://i.ytimg.com/vi/jcDZ7TdKvLg/maxresdefault.jpg);
+    background: url(https://images.pexels.com/photos/162605/notebook-natural-laptop-macbook-162605.jpeg);
     background-size: cover;
     background-attachment: fixed;
     justify-content: center;
     align-items: center;
 }
-
+/* .FormuEdit{
+    
+} */
 .helloIcon{
     display: flex;
     justify-content: space-between;
 }
+.estilo{
+    color: rgba(255, 255, 255, 0.87);
+    margin: 3%;
+    padding: 2% 5%;
+}
+.crearCard{
+    display: flex;
+    margin: 0%;
+    justify-content: space-evenly;
+}
+.estilo{
+    background: rgba(40, 41, 41, 0.877);
+    border-radius: 1ex;
+    margin: 2% 20%;
 
+}
+.jola{
+    margin: 6% 0%;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 3px;
+    width: 80%;
+}
+/* //Primer Modal */
+.botonesBajos{
+    background-color: rgb(143, 143, 143);
+}
+.VerModalUno{
+    background-color: #d1d4d4b0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.primerModal{
+    background: url(https://c1.peakpx.com/wallpaper/13/727/729/working-work-desk-office-still-life-wallpaper-preview.jpg);
+    background-size: cover;
+    /* background-attachment: fixed; */
+    color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.modalDosBotones{
+    color: aliceblue;
+    background-color: rgba(15, 15, 15, 0.924);
+}
 #icono{
     margin: 4%;
 }
-.dote{
+.FechaUser{
     text-align: right;
+    color: rgb(53, 53, 53);
+    background-color: #d1d4d4b0;
+    padding: 6px;
+    font-family: cursive;
+    font-size: 13px;
 }
 .Datee{
     display: flex;
@@ -24,37 +73,20 @@ body{
 .datee{
     margin: 1%;
 }
-.data{
-    margin: 0%;
-    color: white;
-    background-color: #6c757d;
-    padding: 6px;
-    font-family: auto;
+.crearCard{
+    margin: 1%;
 }
-
 .hhh{
     font-family: fantasy;
 }
 
-.estilo{
-    color: rgba(255, 255, 255, 0.87);
-    margin: 3%;
-    padding: 2% 5%;
-}
-
-.estilo{
-    background: rgb(40, 41, 41);
-    border-radius: 1ex;
-    margin: 2% 20%;
-
-}
 h5{
     margin: 0% 7%;
 }
 .formularioDeOrigen{
-    margin: 2%;
+    margin: 2% 4%;
     padding: 2%;
-    width: 28%;
+    width: 40%;
     color: rgb(255, 255, 255);
     border-radius: 8px;
     background-color: rgba(36, 35, 35, 0.87);
@@ -62,25 +94,51 @@ h5{
 .hl{
     font-size: 20px;
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .tituloo{
     font-size: 20px;
 }
-
+.Superior{
+    background-color: rgb(149, 148, 148);
+}
+.ModalUltimo{
+    margin: 0%;
+    background-color: rgb(41, 42, 43);
+    background-size: cover;
+    /* background-attachment: fixed; */
+}
 #justifi{
     display: flex;
 }
 
 #exampleModalLabel{
-    color: black;
+    color: rgb(236, 231, 231);
+}
+
+.editNote{
+    margin: 3%;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(19, 18, 18);
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
 }
 
 @media screen and (max-width: 750px) {
+    body{
+        background: url(https://i.pinimg.com/originals/e2/8e/68/e28e6852ab9e949407ff19fbd5e60b90.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+    }
     .formularioDeOrigen{
       width: 94%;
       margin: 2%;
       color: rgb(255, 255, 255);
-      background-color: rgba(36, 35, 35, 0.87);
+      background-color: rgba(36, 35, 35, 0.911);
       border-radius: 4px;
     }
     .hhh{
