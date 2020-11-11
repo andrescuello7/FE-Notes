@@ -67,6 +67,7 @@ button.onclick = (e) => {
     console.log("Funciona", users);
     formUser.reset();
     displayAUser();
+    $('#exampleModal').modal('hide');
 }
 
 const loadForm = (userId) =>{
